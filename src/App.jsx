@@ -1,14 +1,23 @@
-/* import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' */
-import "./App.css";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Analytics from "./pages/Analytics";
+import Products from "./pages/Products";
+import Customers from "./pages/Customers";
+import Support from "./pages/Support";
 function App() {
   //const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/customers" element={<Customers />} />
+          <Route path="/support" element={<Support />} />
+        </Routes>
+      </Router>
     </>
   );
 }
